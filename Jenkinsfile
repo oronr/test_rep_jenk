@@ -24,7 +24,8 @@ pipeline {
     }
     stage('add file') {
       steps {
-        sh 'gzip -r C:\\Users\\msvs\\Downloads\\npm_demo-master'
+        sh '''gzip -r /c/Users/msvs/Downloads/npm_demo-master/npm_demo-master
+'''
       }
     }
   }
