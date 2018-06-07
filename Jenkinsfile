@@ -19,7 +19,7 @@ pipeline {
     }
     stage('create folder') {
       steps {
-        sh 'mk dir'
+        sh 'mkdir files'
       }
     }
   }
