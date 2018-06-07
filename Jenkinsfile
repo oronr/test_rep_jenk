@@ -17,6 +17,11 @@ pipeline {
         sh 'npm test'
       }
     }
+    stage('create folder') {
+      steps {
+        sh 'mk dir'
+      }
+    }
   }
   parameters {
     choice(name: 'REQUESTED_ACTION', choices: '''Build
