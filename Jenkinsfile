@@ -2,23 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build Demo App') {
-      parallel {
-        stage('Build Demo App') {
-          when {
-            expression {
-              params.REQUESTED_ACTION == 'Build'
-            }
+      when {
+        expression {
+          params.REQUESTED_ACTION == 'Build'
+        }
 
-          }
-          steps {
-            sh 'npm install'
-          }
-        }
-        stage('run test') {
-          steps {
-            sh 'run test'
-          }
-        }
+      }
+      steps {
+        sh 'npm install'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'npm test'
       }
     }
   }
