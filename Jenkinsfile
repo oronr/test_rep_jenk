@@ -22,6 +22,11 @@ pipeline {
         sh 'mkdir files'
       }
     }
+    stage('add file') {
+      steps {
+        sh 'gzip -r C:\\Users\\msvs\\Downloads\\npm_demo-master'
+      }
+    }
   }
   parameters {
     choice(name: 'REQUESTED_ACTION', choices: '''Build
